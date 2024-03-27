@@ -46,7 +46,7 @@ const Footer = ({ data }: { data: FooterProps }) => {
               >
                 <Link
                   target={item.isExternal ? "_blank" : "_self"}
-                  href={item.href}
+                  href={item.href ?? "#"}
                 >
                   {item.title}
                 </Link>

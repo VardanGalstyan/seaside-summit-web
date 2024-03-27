@@ -3,7 +3,7 @@ import clsx from "clsx";
 import Link from "next/link";
 
 const HeaderCtaLink = ({ data }: { data: LinkProps }) => {
-  const { title, href, isExternal } = data;
+  const { title, href = "#", isExternal } = data;
 
   return (
     <Link

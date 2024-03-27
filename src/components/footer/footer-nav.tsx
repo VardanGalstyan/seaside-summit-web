@@ -14,7 +14,10 @@ const FooterNavigation = ({ navLinks }: { navLinks: LinkProps[] }) => {
         {navLinks?.map((item) => {
           const selectedPath = pathname.substring(1) === item.href;
           return (
-            <Link key={`${item.title}-${item.id}`} href={`/${item.href}`}>
+            <Link
+              key={`${item.title}-${item.id}`}
+              href={`/${item.href ?? "#"}`}
+            >
               <li
                 className={clsx(
                   "hover:text-white uppercase cursor-pointer relative font-semibold tracking-wide transition-colors duration-400",

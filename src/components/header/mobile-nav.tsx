@@ -27,7 +27,7 @@ const MobileNav = ({ navbar = [] }: { navbar: LinkProps[] }) => {
             <Link
               key={`${item.title}-${item.id}`}
               className="w-full h-full"
-              href={`/${item.href}`}
+              href={`/${item.href ?? "#"}`}
             >
               <li
                 className={clsx(

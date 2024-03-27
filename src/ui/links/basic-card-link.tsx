@@ -2,7 +2,7 @@ import Link from "next/link";
 import { LinkProps } from "@/lib/types";
 
 const BasicCardLink = ({ link }: { link: LinkProps }) => {
-  const { title, href, isExternal } = link;
+  const { title, href = "#", isExternal } = link;
 
   return (
     <Link target={isExternal ? "_blank" : "_self"} href={`/${href}`}>
