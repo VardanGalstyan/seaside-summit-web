@@ -8,7 +8,7 @@ import { navbarAtom } from "./state";
 import { LinkProps } from "@/lib/types";
 import { usePathname } from "next/navigation";
 
-const MobileNav = ({ navbar }: { navbar: LinkProps[] }) => {
+const MobileNav = ({ navbar = [] }: { navbar: LinkProps[] }) => {
   const isOpen = useAtomValue(navbarAtom);
   const pathname = usePathname();
 
@@ -21,7 +21,7 @@ const MobileNav = ({ navbar }: { navbar: LinkProps[] }) => {
       )}
     >
       <ul className="flex flex-col w-full">
-        {navbar?.map((item) => {
+        {navbar.map((item) => {
           const selectedPath = pathname.substring(1) === item.href;
           return (
             <Link
@@ -35,7 +35,7 @@ const MobileNav = ({ navbar }: { navbar: LinkProps[] }) => {
                   selectedPath ? "text-darkBlue" : ""
                 )}
               >
-                {item.title.toUpperCase()}
+                {item.title?.toUpperCase()}
               </li>
             </Link>
           );

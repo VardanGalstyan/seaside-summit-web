@@ -12,7 +12,7 @@ interface LayoutProps {
 const MainLayout: FC<LayoutProps> = async (props) => {
   const { children } = props;
 
-  const { header: { navbar, ctaLink } = [], footer = {} } =
+  const { header: { navbar, ctaLink } = [], footer = [] } =
     await getLayoutPage();
 
   return (

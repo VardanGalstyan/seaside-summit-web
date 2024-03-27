@@ -21,7 +21,7 @@ const Navigation = ({ navbar }: { navbar: LinkProps[] }) => {
                 selectedPath ? "text-darkBlue" : ""
               )}
             >
-              <Link href={`/${item.href}`}>{item.title.toUpperCase()}</Link>
+              <Link href={`/${item.href}`}>{item?.title?.toUpperCase()}</Link>
             </li>
           );
         })}

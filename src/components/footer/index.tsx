@@ -13,8 +13,11 @@ interface FooterProps {
 }
 
 const Footer = ({ data }: { data: FooterProps }) => {
-  const { addressLinks, navLinks, socialLinks } = data;
   const currentYear = new Date().getFullYear();
+
+  if (!data) return null;
+
+  const { addressLinks, navLinks, socialLinks } = data;
 
   return (
     <footer
