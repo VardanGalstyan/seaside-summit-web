@@ -11,7 +11,7 @@ const Navigation = ({ navbar }: { navbar: LinkProps[] }) => {
   return (
     <nav className="lg:flex flex-grow hidden">
       <ul className="nav-items flex space-x-4 gap-5">
-        {navbar.map((item) => {
+        {navbar?.map((item) => {
           const selectedPath = pathname.substring(1) === item.href;
           return (
             <li

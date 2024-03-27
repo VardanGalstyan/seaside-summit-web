@@ -21,7 +21,7 @@ const MobileNav = ({ navbar }: { navbar: LinkProps[] }) => {
       )}
     >
       <ul className="flex flex-col w-full">
-        {navbar.map((item) => {
+        {navbar?.map((item) => {
           const selectedPath = pathname.substring(1) === item.href;
           return (
             <Link

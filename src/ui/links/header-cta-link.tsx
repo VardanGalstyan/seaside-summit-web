@@ -1,4 +1,4 @@
-import { LinkProps } from "@/src/components/header";
+import { LinkProps } from "@/lib/types";
 import clsx from "clsx";
 import Link from "next/link";
 

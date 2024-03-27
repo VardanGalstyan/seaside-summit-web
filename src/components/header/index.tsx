@@ -29,7 +29,7 @@ const Header: React.FC<HeaderProps> = (props) => {
         <Navigation navbar={navbar} />
         <MobileNav navbar={navbar} />
         <div className="button-section flex gap-4 sm:justify-center items-center">
-          {ctaLink.map((link) => (
+          {ctaLink?.map((link) => (
             <HeaderCtaLink key={link.id} data={link} />
           ))}
         </div>

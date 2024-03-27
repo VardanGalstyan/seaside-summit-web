@@ -12,10 +12,8 @@ interface LayoutProps {
 const MainLayout: FC<LayoutProps> = async (props) => {
   const { children } = props;
 
-  const {
-    header: { navbar, ctaLink },
-    footer,
-  } = await getLayoutPage();
+  const { header: { navbar, ctaLink } = [], footer = {} } =
+    await getLayoutPage();
 
   return (
     <section className="max-w-qhd mx-auto">
