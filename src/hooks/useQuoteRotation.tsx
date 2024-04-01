@@ -28,6 +28,8 @@ const useRotatingQuotes = (data: TestimonialPropType) => {
     [quotes]
   );
 
+  if (!quotes) return null;
+
   const currentQuote = quotes[currentQuoteIndex];
 
   return currentQuote;

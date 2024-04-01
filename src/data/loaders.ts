@@ -1,7 +1,7 @@
 import qs from "qs";
-import { flattenAttributes, getStrapiURL } from "@/lib/utils";
+import { flattenAttributes } from "@/lib/utils";
 
-const baseUrl = getStrapiURL();
+const baseUrl = process.env.NEXT_PUBLIC_STRAPI_URL;
 
 async function fetchData(url: string) {
   const authToken = null;
@@ -61,6 +61,27 @@ export async function getHomePage() {
       "blocks.header",
       "blocks.accelerators",
       "blocks.accelerators.logo",
+      "createdBy",
+      "updatedBy",
+    ],
+  });
+
+  return await fetchData(url.href);
+}
+
+export async function getAboutPage() {
+  const url = new URL("/api/about", baseUrl);
+
+  url.search = qs.stringify({
+    populate: [
+      "blocks.promise",
+      "blocks.header",
+      "blocks.about-general",
+      "blocks.ctaLink",
+      "blocks.media",
+      "blocks.media.media",
+      "blocks.teamMembers",
+      "blocks.teamMembers.image",
       "createdBy",
       "updatedBy",
     ],

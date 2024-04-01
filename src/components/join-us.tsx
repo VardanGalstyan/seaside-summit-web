@@ -1,5 +1,5 @@
-import { BlockType, HeaderProps } from "@/lib/types";
 import clsx from "clsx";
+import { BlockType, HeaderProps } from "@/lib/types";
 
 export interface JoinUsPropTypes extends BlockType {
   header: HeaderProps;

@@ -1,5 +1,5 @@
-import { FC, ReactNode } from "react";
 import { getLayoutPage } from "@/data/loaders";
+import { FC, ReactNode } from "react";
 
 import Footer from "@/components/footer";
 import Header from "@/components/header";

@@ -1,5 +1,5 @@
 import { getHomePage } from "@/data/loaders";
-import homeBlockRenderer from "@/lib/block-renderer";
+import { homeBlockRenderer } from "@/lib/block-renderer";
 
 export default async function Home() {
   const { blocks } = await getHomePage();

@@ -2,6 +2,7 @@ import Link from "next/link";
 import { LinkProps } from "@/lib/types";
 
 const BasicCardLink = ({ link }: { link: LinkProps }) => {
+  if (!link) return null;
   const { title, href = "#", isExternal } = link;
 
   return (
