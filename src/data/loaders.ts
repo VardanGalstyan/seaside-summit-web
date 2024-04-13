@@ -89,3 +89,25 @@ export async function getAboutPage() {
 
   return await fetchData(url.href);
 }
+
+export async function getPartnersPage() {
+  const url = new URL("/api/partners-page", baseUrl);
+
+  url.search = qs.stringify({
+    populate: [
+      "blocks.header",
+      "blocks.partner-swiper",
+      "blocks.partners-swiper-detailed",
+      "blocks.partners-benefits",
+      "blocks.partners-apply",
+      "blocks.steps",
+      "blocks.benefits",
+      "blocks.benefits.icon",
+      "blocks.partners",
+      "createdBy",
+      "updatedBy",
+    ],
+  });
+
+  return await fetchData(url.href);
+}

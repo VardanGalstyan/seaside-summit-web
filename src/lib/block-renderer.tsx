@@ -8,6 +8,7 @@ import Team from "@/components/team";
 import AboutGeneral from "@/components/about-general";
 import JoinOurTeam from "@/components/join-our-team";
 import Gallery from "@/components/gallery";
+import Benefits from "@/components/benefits";
 
 export const homeBlockRenderer = (block: any) => {
   switch (block.__component) {
@@ -38,6 +39,16 @@ export const aboutBlockRenderer = (block: any) => {
       return <JoinOurTeam key={block.id} data={block} />;
     case "component.gallery":
       return <Gallery key={block.id} data={block} />;
+    default:
+      return null;
+  }
+};
+
+export const partnersBlockRenderer = (block: any) => {
+  switch (block.__component) {
+    case "component.partners-benefits":
+      return <Benefits key={block.id} data={block} />;
+
     default:
       return null;
   }
