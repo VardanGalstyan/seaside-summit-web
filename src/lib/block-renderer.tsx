@@ -9,6 +9,8 @@ import AboutGeneral from "@/components/about-general";
 import JoinOurTeam from "@/components/join-our-team";
 import Gallery from "@/components/gallery";
 import Benefits from "@/components/benefits";
+import HowToApply from "@/components/how-to-apply";
+import PartnersDetailed from "@/components/partners-detailed";
 
 export const homeBlockRenderer = (block: any) => {
   switch (block.__component) {
@@ -47,7 +49,11 @@ export const aboutBlockRenderer = (block: any) => {
 export const partnersBlockRenderer = (block: any) => {
   switch (block.__component) {
     case "component.partners-benefits":
-      return <Benefits key={block.id} data={block} />;
+      return <Benefits key={block.__component} data={block} />;
+    case "component.partners-apply":
+      return <HowToApply key={block.__component} data={block} />;
+    case "component.partners-swiper-detailed":
+      return <PartnersDetailed key={block.__component} data={block} />;
 
     default:
       return null;

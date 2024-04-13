@@ -6,28 +6,28 @@ import SectionTitle from "@/ui/section-title";
 import SwiperCarousel from "@/ui/swipers/swiper-carousel";
 import { SwiperSlide } from "swiper/react";
 
-export interface BenefitType {
+export interface HowToApplyType {
   id: number;
   title: string;
   value: string;
   icon: ImageType;
 }
 
-export interface BenefitsPropsType extends BlockType {
+export interface HowToApplyPropTypes extends BlockType {
   header: HeaderProps;
-  benefits: BenefitType[];
+  steps: HowToApplyType[];
 }
 
-const Benefits = ({ data }: { data: BenefitsPropsType }) => {
-  const { header, benefits } = data;
+const HowToApply = ({ data }: { data: HowToApplyPropTypes }) => {
+  const { header, steps } = data;
 
   return (
     <section className="p-5">
       <div className="max-w-screen-2xl mx-auto min-h-72 gap-8 flex flex-col justify-start items-center">
         <SectionTitle title={header?.title} />
         <div className="w-full">
-          <SwiperCarousel>
-            {benefits.map((item) => (
+          <SwiperCarousel slidesPerView={4}>
+            {steps.map((item) => (
               <SwiperSlide key={`${item.id}-${item.icon.alternativeText}`}>
                 <FlipCard data={item} />
               </SwiperSlide>
@@ -39,4 +39,4 @@ const Benefits = ({ data }: { data: BenefitsPropsType }) => {
   );
 };
 
-export default Benefits;
+export default HowToApply;

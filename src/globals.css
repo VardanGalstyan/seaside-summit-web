@@ -8,8 +8,16 @@
   }
 }
 
+/* SWIPER JS */
+
 .swiper-slide {
   display: flex !important;
   align-items: center !important;
   justify-content: center !important;
+}
+
+.swiper-wrapper {
+  -webkit-transition-timing-function: linear !important;
+  -o-transition-timing-function: linear !important;
+  transition-timing-function: linear !important;
 }
