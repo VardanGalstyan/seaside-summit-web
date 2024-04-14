@@ -12,19 +12,15 @@ interface AcceleratorType {
   logo: ImageType;
 }
 
-interface NestedTypes {
-  data: AcceleratorType[];
-}
-
 export interface AcceleratorPropType extends BlockType {
-  accelerators: NestedTypes;
+  accelerators: AcceleratorType[];
   header: HeaderProps;
 }
 
 const Accelerators = ({ data }: { data: AcceleratorPropType }) => {
   const {
     header: { title, paragraph },
-    accelerators: { data: accData },
+    accelerators,
   } = data;
 
   return (
@@ -35,7 +31,7 @@ const Accelerators = ({ data }: { data: AcceleratorPropType }) => {
           <div className="text-md lg:text-lg">{paragraph}</div>
         </div>
         <div className="flex gap-5  lg:max-w-[60%] flex-wrap justify-evenly">
-          {accData.map((item) => {
+          {accelerators?.map((item) => {
             return (
               <Link
                 target="_blank"

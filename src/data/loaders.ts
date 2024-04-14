@@ -1,5 +1,4 @@
 import qs from "qs";
-import { flattenAttributes } from "@/lib/utils";
 
 const baseUrl = process.env.NEXT_PUBLIC_STRAPI_URL;
 
@@ -18,8 +17,9 @@ async function fetchData(url: string) {
       url,
       authToken ? headers : { cache: "no-cache" }
     );
-    const data = await response.json();
-    return flattenAttributes(data);
+
+    const { data } = await response.json();
+    return data;
   } catch (error) {
     console.error("Error fetching data:", error);
     throw error; // or return null;
@@ -45,7 +45,7 @@ export async function getLayoutPage() {
     ],
   });
 
-  return await fetchData(url.href);
+  return fetchData(url.href);
 }
 
 export async function getHomePage() {
@@ -66,7 +66,8 @@ export async function getHomePage() {
     ],
   });
 
-  return await fetchData(url.href);
+  const data = await fetchData(url.href);
+  return data;
 }
 
 export async function getAboutPage() {

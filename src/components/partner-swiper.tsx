@@ -21,20 +21,13 @@ export interface PartnerType {
   logo: ImageType;
 }
 
-interface NestedTypes {
-  data: PartnerType[];
-}
-
 export interface PartnerSwiperProptypes extends BlockType {
   header: HeaderProps;
-  partners: NestedTypes;
+  partners: PartnerType[];
 }
 
 const PartnerSwiper = ({ data }: { data: PartnerSwiperProptypes }) => {
-  const {
-    header,
-    partners: { data: partnersList },
-  } = data;
+  const { header, partners } = data;
 
   return (
     <section className="p-5">
@@ -43,7 +36,7 @@ const PartnerSwiper = ({ data }: { data: PartnerSwiperProptypes }) => {
         <div className="flex-grow w-full flex justify-center items-center">
           <div className="w-full self-center items-center text-center content-center">
             <SwiperCarousel slidesPerView={1} autoplay>
-              {partnersList.map((item) => (
+              {partners.map((item) => (
                 <SwiperSlide
                   className="mb-10"
                   key={`${item.id}-${item.logo.alternativeText}`}

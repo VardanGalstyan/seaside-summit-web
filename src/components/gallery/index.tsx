@@ -14,24 +14,20 @@ export interface GalleryType {
   updatedAt: string;
   publishedAt: string;
   slug: string;
-  media: {
-    data: ImageType[];
-  };
+  media: ImageType[];
 }
 
 export interface GalleryPropTypes extends BlockType {
   header: HeaderProps;
   terms: string;
-  media: {
-    data: GalleryType[];
-  };
+  media: GalleryType[];
 }
 
 const Gallery = ({ data }: { data: GalleryPropTypes }) => {
   const { header, terms, media } = data;
 
   const currentIndex = useAtomValue(galleryIndexAtom);
-  const currentGallery = media.data[currentIndex];
+  const currentGallery = media[currentIndex];
 
   if (!media) return null;
 
@@ -39,8 +35,8 @@ const Gallery = ({ data }: { data: GalleryPropTypes }) => {
     <section className="p-5">
       <div className="max-w-screen-2xl mx-auto min-h-72 gap-3 flex flex-col justify-center items-center">
         <SectionTitle title={header.title} />
-        <GallerySelector galleries={media.data} />
-        <GalleryLightBox images={currentGallery.media.data} />
+        <GallerySelector galleries={media} />
+        <GalleryLightBox images={currentGallery.media} />
         <div className="text-xs hidden lg:block">{terms}</div>
       </div>
     </section>
