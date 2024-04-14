@@ -11,6 +11,7 @@ import Gallery from "@/components/gallery";
 import Benefits from "@/components/benefits";
 import HowToApply from "@/components/how-to-apply";
 import PartnersDetailed from "@/components/partners-detailed";
+import PartnerSwiper from "@/components/partner-swiper";
 
 export const homeBlockRenderer = (block: any) => {
   switch (block.__component) {
@@ -50,10 +51,12 @@ export const partnersBlockRenderer = (block: any) => {
   switch (block.__component) {
     case "component.partners-benefits":
       return <Benefits key={block.__component} data={block} />;
-    case "component.partners-apply":
+    case "component.steps":
       return <HowToApply key={block.__component} data={block} />;
     case "component.partners-swiper-detailed":
       return <PartnersDetailed key={block.__component} data={block} />;
+    case "component.partner-swiper":
+      return <PartnerSwiper key={block.__component} data={block} />;
 
     default:
       return null;

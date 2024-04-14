@@ -26,18 +26,20 @@ const SwiperCarousel = ({
       pagination={{ clickable: true }}
       freeMode={{ enabled: freemode, momentum: false }}
       {...(freemode && { speed: 5000 })}
-      {...(autoplay && { autoplay: { delay: 1, disableOnInteraction: true } })}
+      {...(autoplay && {
+        autoplay: { delay: freemode ? 1 : 5000, disableOnInteraction: true },
+      })}
       breakpoints={{
         "@0.00": {
           slidesPerView: 1,
           spaceBetween: 10,
         },
         "@0.75": {
-          slidesPerView: 2,
+          slidesPerView: slidesPerView < 2 ? slidesPerView : 2,
           spaceBetween: 20,
         },
         "@1.00": {
-          slidesPerView: 3,
+          slidesPerView: slidesPerView < 3 ? slidesPerView : 3,
           spaceBetween: 40,
         },
         "@1.50": {
