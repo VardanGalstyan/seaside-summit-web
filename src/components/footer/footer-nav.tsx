@@ -1,11 +1,11 @@
 "use client";
 
-import { LinkProps } from "@/lib/types";
+import { LinkPropsType } from "@/lib/types";
 import clsx from "clsx";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
-const FooterNavigation = ({ navLinks }: { navLinks: LinkProps[] }) => {
+const FooterNavigation = ({ navLinks }: { navLinks: LinkPropsType[] }) => {
   const pathname = usePathname();
 
   return (

@@ -1,6 +1,6 @@
 "use client";
 
-import { BlockType, HeaderProps, ImageType } from "@/lib/types";
+import { BlockType, HeaderPropsType, ImageType } from "@/lib/types";
 import SwiperCarousel from "@/ui/swipers/swiper-carousel";
 import SectionTitle from "@/ui/section-title";
 import { SwiperSlide } from "swiper/react";
@@ -22,7 +22,7 @@ export interface PartnerType {
 }
 
 export interface PartnerSwiperProptypes extends BlockType {
-  header: HeaderProps;
+  header: HeaderPropsType;
   partners: PartnerType[];
 }
 

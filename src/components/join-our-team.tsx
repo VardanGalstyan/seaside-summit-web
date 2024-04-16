@@ -1,8 +1,8 @@
-import { BlockType, HeaderProps } from "@/lib/types";
+import { BlockType, HeaderPropsType } from "@/lib/types";
 import SectionTitle from "@/ui/section-title";
 
 export interface JoinOurTeamPropTypes extends BlockType {
-  header: HeaderProps;
+  header: HeaderPropsType;
 }
 
 const JoinOurTeam = ({ data }: { data: JoinOurTeamPropTypes }) => {

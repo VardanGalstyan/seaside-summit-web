@@ -114,3 +114,44 @@ export async function getPartnersPage() {
 
   return await fetchData(url.href);
 }
+
+export async function getEventsPage() {
+  const url = new URL("/api/event-page", baseUrl);
+
+  url.search = qs.stringify({
+    populate: [
+      "blocks.header",
+      "events",
+      "events.cover",
+      "events.partners",
+      "events.partners.logo",
+      "events.partners.images",
+      "events.amenities",
+      "events.organizers",
+      "events.speakers",
+      "events.tracks",
+      "events.tracks.icon",
+      "events.startups",
+      "events.aboutEvent",
+      "events.statistics",
+      "events.eventValues",
+      "events.roadmap",
+      "events.roadmap.steps",
+      "events.roadmap.header",
+      "events.roadmap.ctaLink",
+      "events.programm",
+      "events.programm.header",
+      "events.programm.title",
+      "events.programm.ctaLink",
+      "events.programm.tracks",
+      "events.join",
+      "events.join.header",
+      "events.join.steps",
+      "events.join.ctaLink",
+      "createdBy",
+      "updatedBy",
+    ],
+  });
+
+  return fetchData(url.href);
+}

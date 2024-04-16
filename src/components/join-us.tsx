@@ -1,8 +1,8 @@
 import clsx from "clsx";
-import { BlockType, HeaderProps } from "@/lib/types";
+import { BlockType, HeaderPropsType } from "@/lib/types";
 
 export interface JoinUsPropTypes extends BlockType {
-  header: HeaderProps;
+  header: HeaderPropsType;
 }
 
 const JoinUs = ({ data }: { data: JoinUsPropTypes }) => {

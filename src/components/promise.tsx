@@ -1,4 +1,4 @@
-import { BlockType, HeaderProps, LinkProps } from "@/lib/types";
+import { BlockType, HeaderPropsType, LinkPropsType } from "@/lib/types";
 import BasicCardLink from "@/ui/links/basic-card-link";
 import SectionTitle from "@/ui/section-title";
 import clsx from "clsx";
@@ -10,9 +10,9 @@ interface PromiseTypes {
 }
 
 export interface PromisePropTypes extends BlockType {
-  header: HeaderProps;
+  header: HeaderPropsType;
   promise: PromiseTypes[];
-  ctaLink: LinkProps;
+  ctaLink: LinkPropsType;
 }
 
 const Promise = ({ data }: { data: PromisePropTypes }) => {

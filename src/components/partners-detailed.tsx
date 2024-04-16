@@ -1,6 +1,6 @@
 "use client";
 
-import { BlockType, HeaderProps, ImageType } from "@/lib/types";
+import { BlockType, HeaderPropsType, ImageType } from "@/lib/types";
 import SectionTitle from "@/ui/section-title";
 import SwiperCarousel from "@/ui/swipers/swiper-carousel";
 import Image from "next/image";
@@ -21,7 +21,7 @@ export interface PartnerType {
 }
 
 export interface PartnersDetailedPropTypes extends BlockType {
-  header: HeaderProps;
+  header: HeaderPropsType;
   partners: PartnerType[];
 }
 
@@ -43,6 +43,7 @@ const PartnersDetailed = ({ data }: { data: PartnersDetailedPropTypes }) => {
                       src={item.logo.url}
                       fill
                       alt={item.logo.alternativeText ?? ""}
+                      sizes={`width: ${item.logo.width}, height: ${item.logo.height}`}
                     />
                   </div>
                 </SwiperSlide>

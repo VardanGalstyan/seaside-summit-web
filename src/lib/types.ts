@@ -5,17 +5,18 @@ export interface BlockType {
   subTitle?: string;
 }
 
-export interface LinkProps {
+export interface LinkPropsType {
   id?: number;
   title: string;
   href: string;
-  isExternal: boolean;
+  isExternal?: boolean;
 }
 
-export interface HeaderProps {
+export interface HeaderPropsType {
   id: number;
   title: string;
   paragraph: string;
+  icon: ImageType;
 }
 
 export interface ImageType {
@@ -60,4 +61,43 @@ interface FormatItemType {
 interface ImageMetaDataType {
   public_id: string;
   resource_type: string;
+}
+
+export interface TrackType {
+  id: number;
+  title: string;
+  createdAt: string;
+  updatedAt: string;
+  publishedAt: string;
+  icon: ImageType;
+}
+
+export interface PartnerType {
+  id: number;
+  createdAt: string;
+  updatedAt: string;
+  publishedAt: string;
+  partnerId: string;
+  name: string;
+  videoUrl: string;
+  status: string;
+  info: string;
+  url: string;
+  logo: ImageType;
+  images: ImageType[];
+}
+
+export interface RoadmapType {
+  id: number;
+  steps: StepType[];
+  header: HeaderPropsType;
+  ctaLink: LinkPropsType;
+}
+
+export interface StepType {
+  id: number;
+  title: string;
+  value: string;
+  numberOfStep: string;
+  icon: ImageType;
 }

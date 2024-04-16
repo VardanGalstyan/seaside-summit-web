@@ -1,4 +1,4 @@
-import { BlockType, LinkProps } from "@/lib/types";
+import { BlockType, LinkPropsType } from "@/lib/types";
 import BasicCardLink from "@/ui/links/basic-card-link";
 
 interface StatsType {
@@ -9,7 +9,7 @@ interface StatsType {
 
 export interface StatsPropsType extends BlockType {
   stats: StatsType[];
-  ctaLink: LinkProps;
+  ctaLink: LinkPropsType;
 }
 
 const Statistics = ({ data }: { data: StatsPropsType }) => {

@@ -1,6 +1,6 @@
 "use client";
 
-import { BlockType, HeaderProps, ImageType } from "@/lib/types";
+import { BlockType, HeaderPropsType, ImageType } from "@/lib/types";
 import FlipCard from "@/ui/cards/flip-card";
 import SectionTitle from "@/ui/section-title";
 import SwiperCarousel from "@/ui/swipers/swiper-carousel";
@@ -14,7 +14,7 @@ export interface HowToApplyType {
 }
 
 export interface HowToApplyPropTypes extends BlockType {
-  header: HeaderProps;
+  header: HeaderPropsType;
   steps: HowToApplyType[];
 }
 

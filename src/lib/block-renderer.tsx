@@ -62,3 +62,15 @@ export const partnersBlockRenderer = (block: any) => {
       return null;
   }
 };
+
+export const eventsBlockRenderer = (block: any) => {
+  switch (block.__component) {
+    case "component.spotlight":
+      return <Spotlight key={block.id} data={block} />;
+    case "component.join-us":
+      return <JoinUs key={block.id} data={block} />;
+
+    default:
+      return null;
+  }
+};

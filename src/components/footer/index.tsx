@@ -1,4 +1,4 @@
-import { LinkProps } from "@/lib/types";
+import { LinkPropsType } from "@/lib/types";
 
 import Image from "next/image";
 import Link from "next/link";
@@ -7,9 +7,9 @@ import { SocialIcons } from "../social-icon-extractor";
 import FooterNavigation from "./footer-nav";
 
 interface FooterProps {
-  addressLinks: LinkProps[];
-  socialLinks: LinkProps[];
-  navLinks: LinkProps[];
+  addressLinks: LinkPropsType[];
+  socialLinks: LinkPropsType[];
+  navLinks: LinkPropsType[];
 }
 
 const Footer = ({ data }: { data: FooterProps }) => {
