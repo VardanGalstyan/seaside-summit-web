@@ -1,5 +1,5 @@
 import {
-  HeaderPropsType,
+  ItemType,
   ImageType,
   LinkPropsType,
   PartnerType,
@@ -10,22 +10,22 @@ import {
 
 export interface ProgramType {
   id: number;
-  header: HeaderPropsType;
-  title: HeaderPropsType;
+  header: ItemType;
+  title: ItemType;
   ctaLink: LinkPropsType;
   tracks: TrackType[];
 }
 
 export interface JoinType {
   id: number;
-  header: HeaderPropsType;
+  header: ItemType;
   steps: StepType[];
   ctaLink: LinkPropsType;
 }
 
 export interface AboutEventType {
   id: number;
-  header: HeaderPropsType;
+  header: ItemType;
   ctaLink: LinkPropsType;
   videoUrl: string;
 }
@@ -38,7 +38,7 @@ export interface StatisticsType {
 }
 export interface PropositionType {
   id: number;
-  stats: HeaderPropsType[];
+  stats: ItemType[];
   title: string;
   ctaLink: LinkPropsType;
 }

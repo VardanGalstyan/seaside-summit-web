@@ -1,9 +1,4 @@
-import {
-  BlockType,
-  HeaderPropsType,
-  ImageType,
-  LinkPropsType,
-} from "@/lib/types";
+import { BlockType, ItemType, ImageType, LinkPropsType } from "@/lib/types";
 import SectionTitle from "@/ui/section-title";
 import Image from "next/image";
 import { SocialIcons } from "./social-icon-extractor";
@@ -20,7 +15,7 @@ interface TeamTypes {
 }
 
 export interface TeamPropTypes extends BlockType {
-  header: HeaderPropsType;
+  header: ItemType;
   teamMembers: TeamTypes[];
 }
 

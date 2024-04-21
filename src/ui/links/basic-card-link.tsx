@@ -3,6 +3,7 @@ import { LinkPropsType } from "@/lib/types";
 
 const BasicCardLink = ({ link }: { link: LinkPropsType }) => {
   if (!link) return null;
+
   const { title, href = "#", isExternal = false } = link;
 
   return (

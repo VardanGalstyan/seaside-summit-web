@@ -1,6 +1,6 @@
 "use client";
 
-import { BlockType, HeaderPropsType, ImageType } from "@/lib/types";
+import { BlockType, ItemType, ImageType } from "@/lib/types";
 import SectionTitle from "@/ui/section-title";
 import SwiperCarousel from "@/ui/swipers/swiper-carousel";
 import Image from "next/image";
@@ -21,7 +21,7 @@ export interface PartnerType {
 }
 
 export interface PartnersDetailedPropTypes extends BlockType {
-  header: HeaderPropsType;
+  header: ItemType;
   partners: PartnerType[];
 }
 

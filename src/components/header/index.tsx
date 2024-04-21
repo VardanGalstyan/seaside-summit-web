@@ -6,12 +6,12 @@ import BarsIcon from "./bars-icon";
 import MobileNav from "./mobile-nav";
 import Navigation from "./navigation";
 
-interface HeaderPropsType {
+interface ItemType {
   navbar: LinkPropsType[];
   ctaLink: LinkPropsType[];
 }
 
-const Header: React.FC<HeaderPropsType> = (props) => {
+const Header: React.FC<ItemType> = (props) => {
   const { navbar, ctaLink } = props;
 
   return (

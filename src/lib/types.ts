@@ -12,11 +12,12 @@ export interface LinkPropsType {
   isExternal?: boolean;
 }
 
-export interface HeaderPropsType {
+export interface ItemType {
   id: number;
   title: string;
   paragraph: string;
   icon: ImageType;
+  color: string;
 }
 
 export interface ImageType {
@@ -90,7 +91,7 @@ export interface PartnerType {
 export interface RoadmapType {
   id: number;
   steps: StepType[];
-  header: HeaderPropsType;
+  header: ItemType;
   ctaLink: LinkPropsType;
 }
 

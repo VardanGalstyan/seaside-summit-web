@@ -1,5 +1,6 @@
 import { getPartnersPage } from "@/data/loaders";
 import { partnersBlockRenderer } from "@/lib/block-renderer";
+import PageWrapper from "@/ui/wrappers/page-wrapper";
 
 export default async function Partners() {
   const { blocks } = await getPartnersPage();
@@ -7,8 +8,8 @@ export default async function Partners() {
   if (!blocks) return <div>No blocks found</div>;
 
   return (
-    <main className="[&>*:nth-child(even)]:bg-gray">
+    <PageWrapper>
       {blocks.map((block: any) => partnersBlockRenderer(block))}
-    </main>
+    </PageWrapper>
   );
 }

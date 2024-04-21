@@ -1,7 +1,7 @@
 "use client";
 
 import GalleryLightBox from "@/components/gallery/gallery-lightbox";
-import { BlockType, HeaderPropsType, ImageType } from "@/lib/types";
+import { BlockType, ItemType, ImageType } from "@/lib/types";
 import SectionTitle from "@/ui/section-title";
 import { useAtomValue } from "jotai";
 import GallerySelector from "./gallery-selector";
@@ -18,7 +18,7 @@ export interface GalleryType {
 }
 
 export interface GalleryPropTypes extends BlockType {
-  header: HeaderPropsType;
+  header: ItemType;
   terms: string;
   media: GalleryType[];
 }

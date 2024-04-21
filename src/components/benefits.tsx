@@ -1,6 +1,6 @@
 "use client";
 
-import { BlockType, HeaderPropsType, ImageType } from "@/lib/types";
+import { BlockType, ItemType, ImageType } from "@/lib/types";
 import FlipCard from "@/ui/cards/flip-card";
 import SectionTitle from "@/ui/section-title";
 import SwiperCarousel from "@/ui/swipers/swiper-carousel";
@@ -11,10 +11,11 @@ export interface BenefitType {
   title: string;
   value: string;
   icon: ImageType;
+  numberOfStep?: string;
 }
 
 export interface BenefitsPropsType extends BlockType {
-  header: HeaderPropsType;
+  header: ItemType;
   benefits: BenefitType[];
 }
 

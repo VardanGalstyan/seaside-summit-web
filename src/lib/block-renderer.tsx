@@ -1,17 +1,17 @@
+import AboutGeneral from "@/components/about-general";
+import Accelerators from "@/components/accelerators";
+import Benefits from "@/components/benefits";
+import CompanyValues from "@/components/company-values";
+import Gallery from "@/components/gallery";
+import HowToApply from "@/components/how-to-apply";
+import JoinOurTeam from "@/components/join-our-team";
+import JoinUs from "@/components/join-us";
+import PartnerSwiper from "@/components/partner-swiper";
+import PartnersDetailed from "@/components/partners-detailed";
 import Spotlight from "@/components/spotlight";
 import Statistics from "@/components/statistics";
-import Testimonials from "@/components/testimonials";
-import Accelerators from "@/components/accelerators";
-import JoinUs from "@/components/join-us";
-import Promise from "@/components/promise";
 import Team from "@/components/team";
-import AboutGeneral from "@/components/about-general";
-import JoinOurTeam from "@/components/join-our-team";
-import Gallery from "@/components/gallery";
-import Benefits from "@/components/benefits";
-import HowToApply from "@/components/how-to-apply";
-import PartnersDetailed from "@/components/partners-detailed";
-import PartnerSwiper from "@/components/partner-swiper";
+import Testimonials from "@/components/testimonials";
 
 export const homeBlockRenderer = (block: any) => {
   switch (block.__component) {
@@ -32,8 +32,8 @@ export const homeBlockRenderer = (block: any) => {
 
 export const aboutBlockRenderer = (block: any) => {
   switch (block.__component) {
-    case "component.promise":
-      return <Promise key={block.id} data={block} />;
+    case "component.value":
+      return <CompanyValues key={block.id} data={block} />;
     case "component.team":
       return <Team key={block.id} data={block} />;
     case "component.about-general":

@@ -17,7 +17,7 @@ const EventCard = ({ data }: { data: EventType }) => {
         <span className="text-darkGray font-light">{data.country}</span>
         <span className="text-darkGray font-light">{data.startDate}</span>
         <BasicCardLink
-          link={{ href: `event/${data.slug}`, title: "See More" }}
+          link={{ href: `events/${data.slug}`, title: "See More" }}
         />
       </div>
     </div>

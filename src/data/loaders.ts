@@ -66,29 +66,26 @@ export async function getHomePage() {
     ],
   });
 
-  const data = await fetchData(url.href);
-  return data;
+  return fetchData(url.href);
 }
 
 export async function getAboutPage() {
-  const url = new URL("/api/about", baseUrl);
+  const url = new URL("/api/about-page", baseUrl);
 
   url.search = qs.stringify({
     populate: [
-      "blocks.promise",
-      "blocks.header",
       "blocks.about-general",
       "blocks.ctaLink",
       "blocks.media",
+      "blocks.header",
+      "blocks.propositions",
       "blocks.media.media",
       "blocks.teamMembers",
       "blocks.teamMembers.image",
-      "createdBy",
-      "updatedBy",
     ],
   });
 
-  return await fetchData(url.href);
+  return fetchData(url.href);
 }
 
 export async function getPartnersPage() {
@@ -112,11 +109,11 @@ export async function getPartnersPage() {
     ],
   });
 
-  return await fetchData(url.href);
+  return fetchData(url.href);
 }
 
 export async function getEventsPage() {
-  const url = new URL("/api/event-page", baseUrl);
+  const url = new URL(`/api/event-page/`, baseUrl);
 
   url.search = qs.stringify({
     populate: [
@@ -148,8 +145,31 @@ export async function getEventsPage() {
       "events.join.header",
       "events.join.steps",
       "events.join.ctaLink",
-      "createdBy",
-      "updatedBy",
+    ],
+  });
+
+  return fetchData(url.href);
+}
+
+export async function getSingleEventPage(slug: string) {
+  const url = new URL(`/api/events/${slug}`, baseUrl);
+
+  url.search = qs.stringify({
+    populate: [
+      "event.partners",
+      "join",
+      "statistics",
+      "statistics.stats",
+      "aboutEvent.header",
+      "aboutEvent.header.icon",
+      "eventValues",
+      "eventValues.propositions",
+      "eventValues.ctaLink",
+      "eventValues.header",
+      "roadmap.header",
+      "roadmap.ctaLink",
+      "roadmap.steps",
+      "roadmap.steps.icon",
     ],
   });
 
