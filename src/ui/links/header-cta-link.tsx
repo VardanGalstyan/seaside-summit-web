@@ -1,8 +1,8 @@
-import { LinkPropsType } from "@/lib/types";
+import { LinkType } from "@/lib/types";
 import clsx from "clsx";
 import Link from "next/link";
 
-const HeaderCtaLink = ({ data }: { data: LinkPropsType }) => {
+const HeaderCtaLink = ({ data }: { data: LinkType }) => {
   const { title, href = "#", isExternal } = data;
 
   return (

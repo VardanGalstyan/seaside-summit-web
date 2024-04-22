@@ -5,10 +5,10 @@ import Link from "next/link";
 
 import { useAtomValue } from "jotai";
 import { navbarAtom } from "./state";
-import { LinkPropsType } from "@/lib/types";
+import { LinkType } from "@/lib/types";
 import { usePathname } from "next/navigation";
 
-const MobileNav = ({ navbar = [] }: { navbar: LinkPropsType[] }) => {
+const MobileNav = ({ navbar = [] }: { navbar: LinkType[] }) => {
   const isOpen = useAtomValue(navbarAtom);
   const pathname = usePathname();
 

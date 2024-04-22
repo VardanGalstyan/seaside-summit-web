@@ -12,7 +12,7 @@ const SectionWrapper = ({
     <section className="p-5">
       <div
         className={clsx(
-          "max-w-screen-2xl mx-auto min-h-96 gap-3 flex items-center flex-col",
+          "max-w-screen-2xl mx-auto min-h-96 h-full gap-3 flex items-center flex-col",
           classNames
         )}
       >

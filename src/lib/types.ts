@@ -5,19 +5,33 @@ export interface BlockType {
   subTitle?: string;
 }
 
-export interface LinkPropsType {
-  id?: number;
+export interface HeaderType {
   title: string;
-  href: string;
-  isExternal?: boolean;
+  id?: number;
+  paragraph?: string;
 }
 
-export interface ItemType {
+export interface ElementType {
   id: number;
   title: string;
   paragraph: string;
   icon: ImageType;
   color: string;
+}
+
+export interface StepType {
+  id: number;
+  title: string;
+  paragraph: string;
+  numberOfStep: string;
+  icon: ImageType;
+}
+
+export interface LinkType {
+  id?: number;
+  title: string;
+  href: string;
+  isExternal?: boolean;
 }
 
 export interface ImageType {
@@ -41,11 +55,11 @@ export interface ImageType {
 }
 
 interface FormatType {
-  thumbnail: FormatItemType;
-  small: FormatItemType;
+  thumbnail: FormatElementType;
+  small: FormatElementType;
 }
 
-interface FormatItemType {
+interface FormatElementType {
   name: string;
   hash: string;
   ext: string;
@@ -91,14 +105,6 @@ export interface PartnerType {
 export interface RoadmapType {
   id: number;
   steps: StepType[];
-  header: ItemType;
-  ctaLink: LinkPropsType;
-}
-
-export interface StepType {
-  id: number;
-  title: string;
-  value: string;
-  numberOfStep: string;
-  icon: ImageType;
+  header: HeaderType;
+  ctaLink: LinkType;
 }

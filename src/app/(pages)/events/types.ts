@@ -1,7 +1,7 @@
 import {
-  ItemType,
+  ElementType,
   ImageType,
-  LinkPropsType,
+  LinkType,
   PartnerType,
   RoadmapType,
   StepType,
@@ -10,23 +10,23 @@ import {
 
 export interface ProgramType {
   id: number;
-  header: ItemType;
-  title: ItemType;
-  ctaLink: LinkPropsType;
+  header: ElementType;
+  title: ElementType;
+  ctaLink: LinkType;
   tracks: TrackType[];
 }
 
 export interface JoinType {
   id: number;
-  header: ItemType;
+  header: ElementType;
   steps: StepType[];
-  ctaLink: LinkPropsType;
+  ctaLink: LinkType;
 }
 
 export interface AboutEventType {
   id: number;
-  header: ItemType;
-  ctaLink: LinkPropsType;
+  header: ElementType;
+  ctaLink: LinkType;
   videoUrl: string;
 }
 
@@ -34,13 +34,13 @@ export interface StatisticsType {
   id: number;
   stats: StepType[];
   title: string;
-  ctaLink: LinkPropsType;
+  ctaLink: LinkType;
 }
 export interface PropositionType {
   id: number;
-  stats: ItemType[];
+  stats: ElementType[];
   title: string;
-  ctaLink: LinkPropsType;
+  ctaLink: LinkType;
 }
 
 export interface EventType {

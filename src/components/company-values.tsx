@@ -1,12 +1,12 @@
-import { BlockType, ItemType, LinkPropsType } from "@/lib/types";
+import { BlockType, ElementType, LinkType } from "@/lib/types";
 import BasicCardLink from "@/ui/links/basic-card-link";
 import SectionTitle from "@/ui/section-title";
 import SectionWrapper from "@/ui/wrappers/section-wrapper";
 
 export interface CompanyValuesPropTypes extends BlockType {
-  header: ItemType;
-  propositions: ItemType[];
-  ctaLink: LinkPropsType;
+  header: ElementType;
+  propositions: ElementType[];
+  ctaLink: LinkType;
 }
 
 const CompanyValues = ({ data }: { data: CompanyValuesPropTypes }) => {

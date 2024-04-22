@@ -1,11 +1,11 @@
-import { BlockType, ItemType, LinkPropsType } from "@/lib/types";
+import { BlockType, ElementType, LinkType } from "@/lib/types";
 import BasicCardLink from "@/ui/links/basic-card-link";
 import SectionWrapper from "@/ui/wrappers/section-wrapper";
 import Image from "next/image";
 
 export interface TeamPropTypes extends BlockType {
-  header: ItemType;
-  ctaLink: LinkPropsType;
+  header: ElementType;
+  ctaLink: LinkType;
   videoUrl: string;
 }
 

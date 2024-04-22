@@ -1,4 +1,4 @@
-import { LinkPropsType } from "@/lib/types";
+import { LinkType } from "@/lib/types";
 import HeaderCtaLink from "@/ui/links/header-cta-link";
 import Image from "next/image";
 import Link from "next/link";
@@ -6,12 +6,12 @@ import BarsIcon from "./bars-icon";
 import MobileNav from "./mobile-nav";
 import Navigation from "./navigation";
 
-interface ItemType {
-  navbar: LinkPropsType[];
-  ctaLink: LinkPropsType[];
+interface ElementType {
+  navbar: LinkType[];
+  ctaLink: LinkType[];
 }
 
-const Header: React.FC<ItemType> = (props) => {
+const Header: React.FC<ElementType> = (props) => {
   const { navbar, ctaLink } = props;
 
   return (

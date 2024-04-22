@@ -3,7 +3,7 @@ import Accelerators from "@/components/accelerators";
 import Benefits from "@/components/benefits";
 import CompanyValues from "@/components/company-values";
 import Gallery from "@/components/gallery";
-import HowToApply from "@/components/how-to-apply";
+import Steps from "@/components/steps";
 import JoinOurTeam from "@/components/join-our-team";
 import JoinUs from "@/components/join-us";
 import PartnerSwiper from "@/components/partner-swiper";
@@ -52,7 +52,7 @@ export const partnersBlockRenderer = (block: any) => {
     case "component.partners-benefits":
       return <Benefits key={block.__component} data={block} />;
     case "component.steps":
-      return <HowToApply key={block.__component} data={block} />;
+      return <Steps key={block.__component} data={block} />;
     case "component.partners-swiper-detailed":
       return <PartnersDetailed key={block.__component} data={block} />;
     case "component.partner-swiper":

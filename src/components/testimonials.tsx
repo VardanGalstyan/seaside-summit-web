@@ -3,14 +3,14 @@
 import useRotatingQuotes from "@/hooks/useQuoteRotation";
 import { BlockType } from "../lib/types";
 
-interface TestimonialType {
+interface QuoteType {
   id: number;
   quote: string;
   source: string;
 }
 
 export interface TestimonialPropType extends BlockType {
-  quotes: TestimonialType[];
+  quotes: QuoteType[];
 }
 
 const Testimonials = ({ data }: { data: TestimonialPropType }) => {

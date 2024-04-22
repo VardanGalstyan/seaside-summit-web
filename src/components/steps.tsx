@@ -1,27 +1,26 @@
 "use client";
 
-import { BlockType, ItemType, LinkPropsType } from "@/lib/types";
+import { BlockType, HeaderType, LinkType, StepType } from "@/lib/types";
 import FlipCard from "@/ui/cards/flip-card";
+import BasicCardLink from "@/ui/links/basic-card-link";
 import SectionTitle from "@/ui/section-title";
 import SwiperCarousel from "@/ui/swipers/swiper-carousel";
 import SectionWrapper from "@/ui/wrappers/section-wrapper";
 import { SwiperSlide } from "swiper/react";
-import { BenefitType } from "./benefits";
-import BasicCardLink from "@/ui/links/basic-card-link";
 
-export interface HowToApplyPropTypes extends BlockType {
-  header: ItemType;
-  steps: BenefitType[];
-  ctaLink: LinkPropsType;
+export interface StepsPropTypes extends BlockType {
+  header: HeaderType;
+  steps: StepType[];
+  ctaLink: LinkType;
 }
 
-const HowToApply = ({ data }: { data: HowToApplyPropTypes }) => {
+const Steps = ({ data }: { data: StepsPropTypes }) => {
   const { header, steps, ctaLink } = data;
 
   return (
     <SectionWrapper>
       <SectionTitle title={header?.title} />
-      <div className="w-full">
+      <div className="w-full flex-grow">
         <SwiperCarousel slidesPerView={4}>
           {steps.map((item) => (
             <SwiperSlide key={`${item.id}-${item.icon.alternativeText}`}>
@@ -29,10 +28,10 @@ const HowToApply = ({ data }: { data: HowToApplyPropTypes }) => {
             </SwiperSlide>
           ))}
         </SwiperCarousel>
+        <BasicCardLink link={ctaLink} />
       </div>
-      <BasicCardLink link={ctaLink} />
     </SectionWrapper>
   );
 };
 
-export default HowToApply;
+export default Steps;

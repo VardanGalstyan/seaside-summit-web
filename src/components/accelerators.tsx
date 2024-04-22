@@ -1,4 +1,4 @@
-import { BlockType, ItemType, ImageType } from "@/lib/types";
+import { BlockType, ElementType, ImageType } from "@/lib/types";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -14,7 +14,7 @@ interface AcceleratorType {
 
 export interface AcceleratorPropType extends BlockType {
   accelerators: AcceleratorType[];
-  header: ItemType;
+  header: ElementType;
 }
 
 const Accelerators = ({ data }: { data: AcceleratorPropType }) => {

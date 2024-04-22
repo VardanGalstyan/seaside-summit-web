@@ -1,11 +1,11 @@
 "use client";
 
-import { LinkPropsType } from "@/lib/types";
+import { LinkType } from "@/lib/types";
 import { usePathname } from "next/navigation";
 import clsx from "clsx";
 import Link from "next/link";
 
-const Navigation = ({ navbar }: { navbar: LinkPropsType[] }) => {
+const Navigation = ({ navbar }: { navbar: LinkType[] }) => {
   const pathname = usePathname();
 
   return (

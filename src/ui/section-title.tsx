@@ -1,7 +1,4 @@
-interface HeaderType {
-  title: string;
-  paragraph?: string;
-}
+import { HeaderType } from "@/lib/types";
 
 const SectionTitle = ({ title = "", paragraph = "" }: HeaderType) => {
   return (
