@@ -1,6 +1,6 @@
-import { ReactNode } from "react";
 import { A11y, Autoplay, FreeMode, Pagination } from "swiper/modules";
 import { Swiper } from "swiper/react";
+import { ReactNode } from "react";
 
 import "swiper/css";
 import "swiper/css/bundle";

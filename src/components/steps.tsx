@@ -20,7 +20,7 @@ const Steps = ({ data }: { data: StepsPropTypes }) => {
   return (
     <SectionWrapper>
       <SectionTitle title={header?.title} />
-      <div className="w-full flex-grow">
+      <div className="w-full h-full flex flex-grow items-baseline">
         <SwiperCarousel slidesPerView={4}>
           {steps.map((item) => (
             <SwiperSlide key={`${item.id}-${item.icon.alternativeText}`}>
@@ -28,8 +28,8 @@ const Steps = ({ data }: { data: StepsPropTypes }) => {
             </SwiperSlide>
           ))}
         </SwiperCarousel>
-        <BasicCardLink link={ctaLink} />
       </div>
+      <BasicCardLink link={ctaLink} />
     </SectionWrapper>
   );
 };

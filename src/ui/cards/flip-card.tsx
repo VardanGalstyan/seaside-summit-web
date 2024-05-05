@@ -5,9 +5,9 @@ const FlipCard = ({ data }: { data: StepType }) => {
   const { icon, title, paragraph, numberOfStep } = data;
 
   return (
-    <div className="flex flex-col mb-10 text-center justify-center items-center gap-2 p-2 w-[280px]">
+    <div className="flex flex-col mb-10 items-center gap-2 p-2 w-[280px]">
       <Image
-        className="w-24 aspect-square object-contain mb-3"
+        className="w-24 aspect-square object-contain"
         src={icon.url}
         alt={icon?.alternativeText ?? ""}
         width={icon.width}

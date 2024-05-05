@@ -17,9 +17,9 @@ const AboutGeneral = ({ data }: { data: TeamPropTypes }) => {
       <div className="flex flex-col gap-3 max-w-lg h-full justify-evenly">
         <div className="flex flex-col gap-2">
           <span className="text-2xl sm:text-3xl lg:text-4xl font-bold">
-            {header.title}
+            {header?.title}
           </span>
-          <span className="text-sm lg:text-base">{header.paragraph}</span>
+          <span className="text-sm lg:text-base">{header?.paragraph}</span>
         </div>
         <BasicCardLink link={ctaLink} />
       </div>

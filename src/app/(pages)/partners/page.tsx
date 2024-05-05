@@ -1,5 +1,5 @@
-import { getPartnersPage } from "@/data/loaders";
 import { partnersBlockRenderer } from "@/lib/block-renderer";
+import { getPartnersPage } from "@/data/loaders";
 import PageWrapper from "@/ui/wrappers/page-wrapper";
 
 export default async function Partners() {

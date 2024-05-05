@@ -170,6 +170,17 @@ export async function getSingleEventPage(slug: string) {
       "roadmap.ctaLink",
       "roadmap.steps",
       "roadmap.steps.icon",
+      "join.header",
+      "join.steps",
+      "join.steps.icon",
+      "join",
+      "programm.header",
+      "programm.description",
+      "programm.description.icon",
+      "programm.ctaLink",
+      "programm.tracks",
+      "programm.tracks.icon",
+      "tracks",
     ],
   });
 
