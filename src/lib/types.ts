@@ -6,9 +6,9 @@ export interface BlockType {
 }
 
 export interface HeaderType {
-  title: string;
   id?: number;
-  paragraph?: string;
+  title: string;
+  description?: string;
 }
 
 export interface ElementType {
@@ -107,4 +107,20 @@ export interface RoadmapType {
   steps: StepType[];
   header: HeaderType;
   ctaLink: LinkType;
+}
+
+export interface InfoCollectionType {
+  id: number;
+  title: string;
+  createdAt: string;
+  updatedAt: string;
+  publishedAt: string;
+  icon: ImageType;
+}
+
+export interface WeatherType {
+  id: number;
+  day: number;
+  night: number;
+  description: string;
 }
