@@ -23,7 +23,7 @@ const Programms = ({ data }: { data: ProgrammPropType }) => {
   return (
     <SectionWrapper>
       <SectionTitle title={header.title} />
-      <div className="h-full flex w-full justify-between">
+      <div className="h-full flex lg:flex-row flex-col w-full justify-between">
         <div className="flex flex-col gap-3 max-w-lg h-full justify-evenly">
           <div className="flex flex-col gap-2">
             <span className="text-lg font-bold">{description?.title}</span>
