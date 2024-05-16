@@ -3,7 +3,7 @@ import { getPartnersPage } from "@/data/loaders";
 import PageWrapper from "@/ui/wrappers/page-wrapper";
 
 export default async function Partners() {
-  const { blocks } = await getPartnersPage();
+  const { blocks } = (await getPartnersPage()) ?? {};
 
   if (!blocks) return <div>No blocks found</div>;
 

@@ -6,7 +6,7 @@ import PageWrapper from "@/ui/wrappers/page-wrapper";
 import SectionWrapper from "@/ui/wrappers/section-wrapper";
 
 export default async function EventPage() {
-  const { blocks, events } = await getEventsPage();
+  const { blocks, events } = (await getEventsPage()) ?? {};
 
   return (
     <PageWrapper>
