@@ -8,6 +8,8 @@ import SectionWrapper from "@/ui/wrappers/section-wrapper";
 export default async function EventPage() {
   const { blocks, events } = (await getEventsPage()) ?? {};
 
+  if (!blocks) return <div>No blocks found</div>;
+
   return (
     <PageWrapper>
       <SectionWrapper classNames="!flex-row">
