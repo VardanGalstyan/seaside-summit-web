@@ -22,7 +22,7 @@ async function fetchData(url: string) {
     return data;
   } catch (error) {
     console.error("Error fetching data:", error);
-    throw error; // or return null;
+    throw error;
   }
 }
 
@@ -82,6 +82,7 @@ export async function getAboutPage() {
       "blocks.media.media",
       "blocks.teamMembers",
       "blocks.teamMembers.image",
+      "blocks.ctaLink",
     ],
   });
 
@@ -117,34 +118,12 @@ export async function getEventsPage() {
 
   url.search = qs.stringify({
     populate: [
-      "blocks.header",
       "events",
       "events.cover",
-      "events.partners",
-      "events.partners.logo",
-      "events.partners.images",
-      "events.amenities",
-      "events.organizers",
-      "events.speakers",
-      "events.tracks",
-      "events.tracks.icon",
-      "events.startups",
-      "events.aboutEvent",
-      "events.statistics",
-      "events.eventValues",
-      "events.roadmap",
-      "events.roadmap.steps",
-      "events.roadmap.header",
-      "events.roadmap.ctaLink",
-      "events.programm",
-      "events.programm.header",
-      "events.programm.title",
-      "events.programm.ctaLink",
-      "events.programm.tracks",
-      "events.join",
-      "events.join.header",
-      "events.join.steps",
-      "events.join.ctaLink",
+      "blocks.spotlight.spotlight_data.header",
+      "blocks.spotlight.spotlight_data.ctaLink",
+      "blocks.spotlight.spotlight_data.image",
+      "blocks.join_us.join_us_data.header",
     ],
   });
 
@@ -158,6 +137,7 @@ export async function getSingleEventPage(slug: string) {
     populate: [
       "event.partners",
       "join",
+      "join.ctaLink",
       "statistics",
       "statistics.stats",
       "aboutEvent.header",
@@ -191,6 +171,10 @@ export async function getSingleEventPage(slug: string) {
       "information.amenities",
       "information.amenities.icon",
       "tracks",
+      "volunteer_section",
+      "volunteer_section.steps",
+      "volunteer_section.steps.header",
+      "volunteer_section.steps.ctaLink",
     ],
   });
 

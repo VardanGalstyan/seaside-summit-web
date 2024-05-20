@@ -19,13 +19,19 @@ const Information = ({
   const heads = headers();
   const pathname = heads.get("next-url");
 
+  const { header, paragraph } = data ?? {};
+
+  if (!data) {
+    return null;
+  }
+
   return (
     <SectionWrapper>
-      <SectionTitle title={data.header.title} />
+      <SectionTitle title={header?.title} />
       <div className="flex flex-col lg:flex-row w-full justify-between gap-2">
         <div className="w-full">
-          <h2>{data.paragraph.title}</h2>
-          <p>{data.paragraph.description}</p>
+          <h2>{paragraph?.title}</h2>
+          <p>{paragraph?.description}</p>
           <div className="flex flex-col gap-2 w-full">
             {infoNav.map((item) => (
               <Link
@@ -46,22 +52,24 @@ const Information = ({
             ))}
           <div className="flex gap-3 flex-wrap">
             {query.category !== "weather" ? (
-              (data[query.category] as InfoCollectionType[])?.map((item) => (
-                <div
-                  key={item.id}
-                  className="flex justify-start items-center max-h-24 w-52 gap-2 p-2"
-                >
-                  <div className="border rounded-full p-5 w-20 h-20 flex justify-center items-center">
-                    <Image
-                      width={item.icon.width}
-                      height={item.icon.height}
-                      alt={item.icon.alternativeText ?? ""}
-                      src={item.icon.url}
-                    />
+              (data && (data[query.category] as InfoCollectionType[]))?.map(
+                (item) => (
+                  <div
+                    key={item.id}
+                    className="flex justify-start items-center max-h-24 w-52 gap-2 p-2"
+                  >
+                    <div className="border rounded-full p-5 w-20 h-20 flex justify-center items-center">
+                      <Image
+                        width={item.icon.width}
+                        height={item.icon.height}
+                        alt={item.icon.alternativeText ?? ""}
+                        src={item.icon.url}
+                      />
+                    </div>
+                    <span className="text-md">{item.title}</span>
                   </div>
-                  <span className="text-md">{item.title}</span>
-                </div>
-              ))
+                )
+              )
             ) : (
               <WeatherBlock data={data.weather} />
             )}

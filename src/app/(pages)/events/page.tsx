@@ -1,22 +1,19 @@
-import { EventType } from "./types";
+import EventsWrapper from "@/components/events-wrapper";
 import { getEventsPage } from "@/data/loaders";
 import { eventsBlockRenderer } from "@/lib/block-renderer";
-import EventCard from "@/ui/cards/event-card";
+
 import PageWrapper from "@/ui/wrappers/page-wrapper";
-import SectionWrapper from "@/ui/wrappers/section-wrapper";
 
 export default async function EventPage() {
   const { blocks, events } = (await getEventsPage()) ?? {};
 
-  if (!blocks) return <div>No blocks found</div>;
+  if (!blocks) {
+    return null;
+  }
 
   return (
     <PageWrapper>
-      <SectionWrapper classNames="!flex-row">
-        {events.map((event: EventType) => (
-          <EventCard key={event.id} data={event} />
-        ))}
-      </SectionWrapper>
+      <EventsWrapper events={events} />
       {blocks.map((block: any) => eventsBlockRenderer(block))}
     </PageWrapper>
   );

@@ -7,7 +7,10 @@ const BasicCardLink = ({ link }: { link: LinkType }) => {
   const { title, href = "#", isExternal = false } = link;
 
   return (
-    <Link target={isExternal ? "_blank" : "_self"} href={`/${href}`}>
+    <Link
+      target={isExternal ? "_blank" : "_self"}
+      href={isExternal ? href : `/${href}`}
+    >
       <div className="hover:bg-blue w-fit rounded-md hover:text-white border text-blue px-4 py-2">
         {title}
       </div>

@@ -19,7 +19,7 @@ const Benefits = ({ data }: { data: BenefitsPropsType }) => {
     <SectionWrapper>
       <SectionTitle title={header?.title} />
       <div className="w-full flex-grow justify-center h-full flex">
-        <SwiperCarousel>
+        <SwiperCarousel slidesPerView={benefits.length}>
           {benefits.map((item) => (
             <SwiperSlide key={`${item.id}-${item.icon.alternativeText}`}>
               <FlipCard data={item} />

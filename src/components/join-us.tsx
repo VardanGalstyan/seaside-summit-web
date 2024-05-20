@@ -1,22 +1,24 @@
 import clsx from "clsx";
-import { BlockType, ElementType } from "@/lib/types";
+import { BlockType, HeaderType } from "@/lib/types";
 
 export interface JoinUsPropTypes extends BlockType {
-  header: ElementType;
+  header: HeaderType;
 }
 
 const JoinUs = ({ data }: { data: JoinUsPropTypes }) => {
-  const {
-    header: { title, paragraph },
-  } = data;
+  if (!data) {
+    return null;
+  }
 
   return (
     <section className="p-5">
       <div className="flex max-w-screen-2xl mx-auto flex-col h-72 sm:h-96 gap-6 justify-center items-center">
         <div className="flex flex-col gap-2 justify-center items-center">
-          <div className="text-3xl sm:text-5xl font-extrabold">{title}</div>
+          <div className="text-3xl sm:text-5xl font-extrabold">
+            {data?.header?.title}
+          </div>
           <div className="text-sm sm:text-lg w-[70%] text-center">
-            {paragraph}
+            {data?.header?.description}
           </div>
         </div>
         <div className="border-[0.4px] pl-1 shadow-md rounded-md flex relative border-blue">

@@ -18,17 +18,21 @@ export interface ProgrammPropType extends BlockType {
 }
 
 const Programms = ({ data }: { data: ProgrammPropType }) => {
-  const { header, ctaLink, description, tracks } = data;
+  const { header, ctaLink, description, tracks } = data ?? {};
+
+  if (!data) {
+    return null;
+  }
 
   return (
     <SectionWrapper>
-      <SectionTitle title={header.title} />
+      <SectionTitle title={header?.title} />
       <div className="h-full flex lg:flex-row flex-col w-full justify-between">
         <div className="flex flex-col gap-3 max-w-lg h-full justify-evenly">
           <div className="flex flex-col gap-2">
             <span className="text-lg font-bold">{description?.title}</span>
             <span className="text-sm lg:text-base">
-              {description.paragraph}
+              {description?.paragraph}
             </span>
           </div>
           <BasicCardLink link={ctaLink} />
@@ -36,7 +40,7 @@ const Programms = ({ data }: { data: ProgrammPropType }) => {
         <div className="w-full max-w-lg">
           <h2>Suggested Tracks and Technologies</h2>
           <div className="flex gap-3 flex-wrap justify-between">
-            {tracks.map((item) => (
+            {tracks?.map((item) => (
               <div key={item.id} className="w-20">
                 <Image
                   width={item.icon.width}

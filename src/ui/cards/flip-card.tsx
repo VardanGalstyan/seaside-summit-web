@@ -14,7 +14,7 @@ const FlipCard = ({ data }: { data: StepType }) => {
         height={icon.height}
       />
       <span className="font-bold uppercase text-sm">{numberOfStep}</span>
-      <span className="font-bold">{title}</span>
+      <span className="font-bold text-center">{title}</span>
       <span className="text-[14px] text-center">{paragraph}</span>
     </div>
   );

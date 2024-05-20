@@ -9,13 +9,17 @@ export interface StatsPropsType extends BlockType {
 }
 
 const Statistics = ({ data }: { data: StatsPropsType }) => {
-  const { stats, title = "", ctaLink } = data;
+  const { stats, title = "", ctaLink } = data ?? {};
+
+  if (!data) {
+    return null;
+  }
 
   return (
     <SectionWrapper classNames="justify-evenly items-center">
       <SectionTitle title={title} />
       <div className="flex flex-wrap flex-grow justify-center gap-5  w-full items-center">
-        {stats.map((item) => (
+        {stats?.map((item) => (
           <div
             key={item.id}
             className="flex justify-center flex-col items-center"

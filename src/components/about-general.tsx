@@ -10,7 +10,7 @@ export interface TeamPropTypes extends BlockType {
 }
 
 const AboutGeneral = ({ data }: { data: TeamPropTypes }) => {
-  const { header, ctaLink, videoUrl } = data;
+  const { header, ctaLink, videoUrl } = data ?? {};
 
   return (
     <SectionWrapper classNames="flex-wrap-reverse !flex-row justify-evenly">

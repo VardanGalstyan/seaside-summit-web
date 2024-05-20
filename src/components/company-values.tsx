@@ -9,15 +9,32 @@ export interface CompanyValuesPropTypes extends BlockType {
   ctaLink: LinkType;
 }
 
-const CompanyValues = ({ data }: { data: CompanyValuesPropTypes }) => {
-  const { header, propositions, ctaLink } = data;
+const CompanyValues = ({
+  data,
+  slug,
+}: {
+  data: CompanyValuesPropTypes;
+  slug?: string;
+}) => {
+  const { header, propositions, ctaLink } = data ?? {};
+
+  if (!data) {
+    return null;
+  }
+
+  if (ctaLink) {
+    ctaLink.href =
+      slug && !ctaLink.isExternal
+        ? `events/${slug}/${ctaLink?.href}`
+        : ctaLink.href;
+  }
 
   return (
     <SectionWrapper>
       <SectionTitle title={header?.title} />
       <div className="flex flex-grow h-full">
         <div className="grid grid-cols-2 self-center h-full lg:grid-cols-4 w-full gap-3">
-          {propositions.map((item) => (
+          {propositions?.map((item) => (
             <div
               className="flex-col flex gap-3 text-start sm:text-start"
               key={`${item.id}-${item.title}`}

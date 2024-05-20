@@ -1,4 +1,4 @@
-import { BlockType, ElementType, ImageType } from "@/lib/types";
+import { BlockType, ElementType, HeaderType, ImageType } from "@/lib/types";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -14,12 +14,12 @@ interface AcceleratorType {
 
 export interface AcceleratorPropType extends BlockType {
   accelerators: AcceleratorType[];
-  header: ElementType;
+  header: HeaderType;
 }
 
 const Accelerators = ({ data }: { data: AcceleratorPropType }) => {
   const {
-    header: { title, paragraph },
+    header: { title, description },
     accelerators,
   } = data;
 
@@ -28,7 +28,7 @@ const Accelerators = ({ data }: { data: AcceleratorPropType }) => {
       <div className="max-w-screen-2xl p-2 py-10 lg:p-10 lg:flex-row  mx-auto gap-10 flex flex-col justify-between items-center">
         <div className="flex flex-grow text-center flex-col gap-2">
           <div className="text-2xl lg:text-4xl font-bold">{title}</div>
-          <div className="text-md lg:text-lg">{paragraph}</div>
+          <div className="text-md lg:text-lg">{description}</div>
         </div>
         <div className="flex gap-5  lg:max-w-[60%] flex-wrap justify-evenly">
           {accelerators?.map((item) => {

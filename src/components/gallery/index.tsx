@@ -36,7 +36,7 @@ const Gallery = ({ data }: { data: GalleryPropTypes }) => {
       <div className="max-w-screen-2xl mx-auto min-h-72 gap-3 flex flex-col justify-center items-center">
         <SectionTitle title={header.title} />
         <GallerySelector galleries={media} />
-        <GalleryLightBox images={currentGallery.media} />
+        <GalleryLightBox images={currentGallery?.media ?? []} />
         <div className="text-xs hidden lg:block">{terms}</div>
       </div>
     </section>
