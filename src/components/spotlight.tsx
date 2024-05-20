@@ -19,7 +19,7 @@ const Spotlight = ({ data }: { data: StatsPropsType }) => {
       <div className="flex flex-col flex-grow w-full sm:w-2/3 items-center p-1 lg:p-5">
         <div className="relative aspect-video w-full h-full">
           <Image
-            src={image.url}
+            src={image?.url}
             className="w-full"
             sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
             fill
