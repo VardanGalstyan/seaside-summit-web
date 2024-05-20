@@ -40,8 +40,6 @@ export async function getLayoutPage() {
       "footer.addressLinks",
       "footer.socialLinks",
       "footer.brandLogo",
-      "createdBy",
-      "updatedBy",
     ],
   });
 
@@ -53,16 +51,15 @@ export async function getHomePage() {
 
   url.search = qs.stringify({
     populate: [
+      "blocks.header",
       "blocks.quotes",
       "blocks.stats",
       "blocks.ctaLink",
-      "blocks.partners",
-      "blocks.spotlight",
-      "blocks.header",
-      "blocks.accelerators",
+      "blocks.spotlight.spotlight_data.header",
+      "blocks.spotlight.spotlight_data.ctaLink",
+      "blocks.spotlight.spotlight_data.image",
+      "blocks.join_us.join_us_data.header",
       "blocks.accelerators.logo",
-      "createdBy",
-      "updatedBy",
     ],
   });
 
@@ -74,15 +71,12 @@ export async function getAboutPage() {
 
   url.search = qs.stringify({
     populate: [
-      "blocks.about-general",
       "blocks.ctaLink",
-      "blocks.media",
       "blocks.header",
+      "blocks.about-general",
       "blocks.propositions",
       "blocks.media.media",
-      "blocks.teamMembers",
       "blocks.teamMembers.image",
-      "blocks.ctaLink",
     ],
   });
 
@@ -99,14 +93,9 @@ export async function getPartnersPage() {
       "blocks.partners-swiper-detailed",
       "blocks.partners-benefits",
       "blocks.partners-apply",
-      "blocks.steps",
-      "blocks.benefits",
       "blocks.benefits.icon",
       "blocks.steps.icon",
-      "blocks.partners",
       "blocks.partners.logo",
-      "createdBy",
-      "updatedBy",
     ],
   });
 
@@ -136,45 +125,30 @@ export async function getSingleEventPage(slug: string) {
   url.search = qs.stringify({
     populate: [
       "event.partners",
-      "join",
-      "join.ctaLink",
-      "statistics",
       "statistics.stats",
-      "aboutEvent.header",
       "aboutEvent.header.icon",
-      "eventValues",
       "eventValues.propositions",
       "eventValues.ctaLink",
       "eventValues.header",
       "roadmap.header",
       "roadmap.ctaLink",
-      "roadmap.steps",
       "roadmap.steps.icon",
+      "join.ctaLink",
       "join.header",
-      "join.steps",
       "join.steps.icon",
-      "join",
       "programm.header",
-      "programm.description",
       "programm.description.icon",
       "programm.ctaLink",
-      "programm.tracks",
       "programm.tracks.icon",
-      "information",
       "information.header",
       "information.paragraph",
-      "information.entertainments",
       "information.entertainments.icon",
-      "information.rules",
       "information.rules.icon",
       "information.weather",
-      "information.amenities",
       "information.amenities.icon",
-      "tracks",
-      "volunteer_section",
-      "volunteer_section.steps",
       "volunteer_section.steps.header",
       "volunteer_section.steps.ctaLink",
+      "tracks",
     ],
   });
 

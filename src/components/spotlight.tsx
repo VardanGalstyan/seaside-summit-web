@@ -11,6 +11,10 @@ export interface StatsPropsType extends BlockType {
 }
 
 const Spotlight = ({ data }: { data: StatsPropsType }) => {
+  if (!data) {
+    return null;
+  }
+
   const { image, ctaLink, header } = data;
 
   return (

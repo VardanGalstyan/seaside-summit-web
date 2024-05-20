@@ -28,8 +28,8 @@ export interface ParterSwiperPropTypes extends BlockType {
 
 const ParterSwiper = ({ data }: { data: ParterSwiperPropTypes }) => {
   const { header, partners } = data;
+
   const iconsPerView = partners.length < 6 ? partners.length : 7;
-  console.log("🚀 ~ ParterSwiper ~ iconsPerView:", iconsPerView);
 
   return (
     <SectionWrapper>

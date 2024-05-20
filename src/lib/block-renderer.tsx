@@ -3,29 +3,35 @@ import Accelerators from "@/components/accelerators";
 import Benefits from "@/components/benefits";
 import CompanyValues from "@/components/company-values";
 import Gallery from "@/components/gallery";
-import Steps from "@/components/steps";
 import JoinOurTeam from "@/components/join-our-team";
 import JoinUs from "@/components/join-us";
+import PartnerSwiper from "@/components/partner-swiper";
+import PartnersDetailed from "@/components/partners-detailed";
 import Spotlight from "@/components/spotlight";
 import Statistics from "@/components/statistics";
+import Steps from "@/components/steps";
 import Team from "@/components/team";
 import Testimonials from "@/components/testimonials";
-import PartnersDetailed from "@/components/partners-detailed";
-import PartnerSwiper from "@/components/partner-swiper";
-import EventsWrapper from "@/components/events-wrapper";
 
 export const homeBlockRenderer = (block: any) => {
   switch (block.__component) {
     case "component.testimonials":
-      return <Testimonials key={block.id} data={block} />;
+      return <Testimonials key={block.__component} data={block} />;
     case "component.statistics":
-      return <Statistics key={block.id} data={block} />;
+      return <Statistics key={block.__component} data={block} />;
     case "component.spotlight":
-      return <Spotlight key={block.id} data={block} />;
+      return (
+        <Spotlight
+          key={block.__component}
+          data={block?.spotlight?.spotlight_data}
+        />
+      );
     case "component.accelerators":
-      return <Accelerators key={block.id} data={block} />;
+      return <Accelerators key={block.__component} data={block} />;
     case "component.join-us":
-      return <JoinUs key={block.id} data={block} />;
+      return (
+        <JoinUs key={block.__component} data={block?.join_us?.join_us_data} />
+      );
     default:
       return null;
   }

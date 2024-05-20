@@ -17,7 +17,6 @@ export default async function Event({
   searchParams?: { category: keyof InformationType };
 }) {
   const data = await getSingleEventPage(params.slug);
-  console.log("🚀 ~ data:", data);
 
   return (
     <PageWrapper>
