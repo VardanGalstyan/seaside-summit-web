@@ -1,14 +1,49 @@
+'use client';
+
+import Image from 'next/image';
+import { useEffect, useState } from 'react';
+
 const HeroWrapper = () => {
-  const imageUrl =
-    "https://www.seasidestartupsummit.com/assets/media/bg.6ca3fdd4.jpg";
+  // pass this values from a higher level
+  const image =
+    'https://www.seasidestartupsummit.com/assets/media/bg.6ca3fdd4.jpg';
+  const altText = 'Torch in a hand of a man';
 
   return (
-    <section
-      style={{ backgroundImage: `url(${imageUrl})` }}
-      className="h-[90vh] bg-cover bg-fixed bg-center bg-no-repeat w-full"
+    <div className="relative overflow-hidden h-[90vh]">
+      <ParallaxScrollEffect image={image} altText={altText} />
+      <section className="absolute h-full w-full flex justify-center items-center text-white">
+        Hero Section
+      </section>
+    </div>
+  );
+};
+
+export const ParallaxScrollEffect = ({
+  image,
+  altText,
+}: {
+  image: string;
+  altText: string;
+}) => {
+  const [offsetY, setOffsetY] = useState(0);
+
+  const handleScroll = () => {
+    setOffsetY(window.scrollY);
+  };
+
+  useEffect(() => {
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  return (
+    <div
+      style={{ transform: `translateY(${offsetY * 0.5}px)` }}
+      className="absolute w-full h-full"
     >
-      Hero Section
-    </section>
+      <Image className="object-cover" alt={altText} fill src={image} />
+    </div>
   );
 };
 
