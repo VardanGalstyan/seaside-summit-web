@@ -15,7 +15,7 @@ const Header: React.FC<ElementType> = (props) => {
   const { navbar, ctaLink } = props;
 
   return (
-    <header className=" bg-gray w-full h-[10vh] sticky top-0 z-10 text-darkGray">
+    <header className="bg-gray w-full h-[10vh] sticky top-0 z-10 text-darkGray">
       <div className="max-w-screen-2xl mx-auto h-full flex px-2 lg:px-10 items-center gap-4 justify-between py-2">
         <Link href="/" className="flex-shrink-0 lg:mr-4 px-2 lg:px-10">
           <Image

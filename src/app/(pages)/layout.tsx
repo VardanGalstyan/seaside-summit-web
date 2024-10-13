@@ -22,6 +22,7 @@ const MainLayout: FC<LayoutProps> = async (props) => {
 
   return (
     <section className="max-w-qhd mx-auto">
+      {/* !todo move hero wrapper to page lavel */}
       <HeroWrapper />
       <Header navbar={header?.navbar} ctaLink={header.ctaLink} />
       {children}
