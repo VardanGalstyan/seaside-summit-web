@@ -1,7 +1,7 @@
-"use client";
+'use client';
 
-import Image from "next/image";
-import { ParallaxProvider, useParallax } from "react-scroll-parallax";
+import Image from 'next/image';
+import { useEffect, useState } from 'react';
 
 const HeroWrapper = () => {
   // pass this values from a higher level
@@ -11,12 +11,10 @@ const HeroWrapper = () => {
 
   return (
     <div className="relative overflow-hidden h-[90vh]">
-      <ParallaxProvider>
-        <ParallaxScrollEffect image={image} altText={altText} />
-        <section className="absolute h-full w-full flex justify-center items-center text-white">
-          Hero Section
-        </section>
-      </ParallaxProvider>
+      <ParallaxScrollEffect image={image} altText={altText} />
+      <section className="absolute h-full w-full flex justify-center items-center text-white">
+        Hero Section
+      </section>
     </div>
   );
 };
@@ -28,13 +26,22 @@ export const ParallaxScrollEffect = ({
   image: string;
   altText: string;
 }) => {
-  const { ref: parallaxRef } = useParallax<HTMLDivElement>({
-    speed: -50,
-    translateY: [-111.3, 100],
-  });
+  const [offsetY, setOffsetY] = useState(0);
+
+  const handleScroll = () => {
+    setOffsetY(window.scrollY);
+  };
+
+  useEffect(() => {
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   return (
-    <div ref={parallaxRef} className="absolute w-full h-full">
+    <div
+      style={{ transform: `translateY(${offsetY * 0.5}px)` }}
+      className="absolute w-full h-full"
+    >
       <Image className="object-cover" alt={altText} fill src={image} />
     </div>
   );
